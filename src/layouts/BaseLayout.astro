@@ -1,0 +1,24 @@
+---
+/**
+ * Minimal Layout Shell (slice A tracer — #10).
+ *
+ * For now this is just the <html>/<head>/<body> skeleton with slots, enough to
+ * prove the Astro → build → dist pipeline renders a page identically. The full
+ * Layout Shell (head/Metadata derivation, marquee, nav, cookie banner, footer)
+ * is built in #11; the inert pages move onto it in #12.
+ */
+interface Props {
+  lang?: string;
+  dir?: string;
+}
+const { lang = 'en', dir = 'ltr' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang} dir={dir}>
+  <head>
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

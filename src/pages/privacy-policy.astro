@@ -1,0 +1,18 @@
+---
+/**
+ * Privacy Policy — the slice A tracer page (#10).
+ *
+ * The original head/body inner HTML is injected verbatim via `set:html` so the
+ * built output is byte-faithful to the current page. This deliberately does NOT
+ * yet templatize the shared Shell or derive Metadata — that is #11/#12. The point
+ * of this slice is only to prove the full pipeline (Astro source → build → dist →
+ * Pages) produces a visually-identical page through BaseLayout.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import headHtml from '../raw/privacy-head.html?raw';
+import bodyHtml from '../raw/privacy-body.html?raw';
+---
+<BaseLayout lang="en" dir="ltr">
+  <Fragment slot="head" set:html={headHtml} />
+  <Fragment set:html={bodyHtml} />
+</BaseLayout>
