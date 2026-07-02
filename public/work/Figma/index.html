@@ -64,8 +64,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 </script>
     <link rel="preload" href="/fonts/Uncut/UncutSans-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/Uncut/UncutSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="/_hej/style.css" />
     <script type="module" src="/_hej/main.js"></script>
+    <script type="speculationrules">
+    {
+        "prefetch": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }],
+        "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "conservative" }]
+    }
+    </script>
 </head>
 
 <body>
@@ -86,7 +93,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <!-- preloader only trigger once   -->
 
-    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 
     <!-- transitions -->
     <div class="c--transition-a"></div>
@@ -591,14 +597,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h3 class="f--font-d f--color-a font--bold f--sp-c">Tell us about your project</h3>
 
                 <div class="g--form-hubspot-01 js--hubspot">
-                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-                    <script>
-                      hbspt.forms.create({
+                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js" defer></script>
+                    <script>document.addEventListener("DOMContentLoaded", function () { hbspt.forms.create({
+                        target: ".g--form-hubspot-01",
                         region: "na1",
                         portalId: "47566911",
                         formId: "515b9f31-b66d-4507-ba11-8e3af2fa4fcd"
-                      });
-                    </script>
+                      }); });</script>
                 </div>
             </div>
             <button class="g--modal-01__btn" tf-ds-modal-close="modal-1" aria-label="Close">
