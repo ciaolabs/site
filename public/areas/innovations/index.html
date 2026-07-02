@@ -62,8 +62,15 @@
     }
 </script>
     <link rel="preload" href="/fonts/Uncut/UncutSans-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/Uncut/UncutSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="/_hej/style.css" />
     <script type="module" src="/_hej/main.js"></script>
+    <script type="speculationrules">
+    {
+        "prefetch": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }],
+        "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "conservative" }]
+    }
+    </script>
 </head>
 
 <body>
@@ -84,7 +91,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <!-- preloader only trigger once   -->
 
-    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 
     <!-- transitions -->
     <div class="c--transition-a"></div>
@@ -840,14 +846,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="g--modal-01__wrapper">
         <h3 class="f--font-d f--color-a font--bold f--sp-c">Tell us about your project</h3>
         
-        <div class="g--form-hubspot-01 js--hubspot"><script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-            <script>
-              hbspt.forms.create({
+        <div class="g--form-hubspot-01 js--hubspot"><script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js" defer></script>
+            <script>document.addEventListener("DOMContentLoaded", function () { hbspt.forms.create({
+                        target: ".g--form-hubspot-01",
                 region: "na1",
                 portalId: "3120747",
                 formId: "f6e8eb2b-c7ee-49c5-9992-cd29879dc113"
-              });
-            </script></div>
+              }); });</script></div>
     </div>
     <button class="g--modal-01__btn" tf-ds-modal-close="modal-1" aria-label="Close">
         <svg class="g--modal-01__btn__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1046,6 +1051,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </footer>
     <!-- footer -->
-</body>
+<script src="/_hej/cursor.js" defer></script></body>
 
 </html>
